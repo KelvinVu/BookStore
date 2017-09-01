@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register src="control/UC_header.ascx" tagname="UC_header" tagprefix="uc1" %>
+<%@ Register src="control/UC_footer.ascx" tagname="UC_footer" tagprefix="uc2" %>
+<%@ Register src="control/UC_navigation_menu.ascx" tagname="UC_navigation_menu" tagprefix="uc3" %>
+<%@ Register src="control/UC_ChuDe_menu.ascx" tagname="UC_ChuDe_menu" tagprefix="uc4" %>
+
+<%@ Register src="control/UC_quangcao.ascx" tagname="UC_quangcao" tagprefix="uc5" %>
+
+<%@ Register src="control/UC_SachMoi.ascx" tagname="UC_SachMoi" tagprefix="uc6" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 900px;
+        }
+        .auto-style3 {
+            width: 100%;
+        }
+        .auto-style5 {}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table cellpadding="2" cellspacing="3" class="auto-style1">
+            <tr>
+                <td colspan="3">
+                    <uc1:UC_header ID="UC_header1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <uc3:UC_navigation_menu ID="UC_navigation_menu1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; vertical-align: top; text-align: center;">
+                    <table cellpadding="0" cellspacing="0" class="auto-style1">
+                        <tr>
+                            <td style="font-size: x-large; color: #FFFFFF; font-weight: bold; background-color: #00CC00">MENU SÁCH</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; width: 200px;">
+                                <uc4:UC_ChuDe_menu ID="UC_ChuDe_menu1" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="auto-style5" style="vertical-align: top; width: 500px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td style="width: 150px; vertical-align: top;">
+                    <table class="auto-style3">
+                        <tr>
+                            <td class="auto-style1" style="font-size: large; color: #FFFFFF; font-weight: bold; background-color: #00CC00">QUẢNG CÁO</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                <uc5:UC_quangcao ID="UC_quangcao1" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <uc2:UC_footer ID="UC_footer1" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
